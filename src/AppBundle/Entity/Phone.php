@@ -88,4 +88,12 @@ class Phone
         $this->phone = $phone;
         return $this;
     }
+
+    public function toString()
+    {
+        return [
+            'id' => $this->getId(),
+            'phone' => $this->getPhone(),
+        ];
+    }
 }

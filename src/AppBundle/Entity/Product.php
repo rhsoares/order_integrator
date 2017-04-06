@@ -86,4 +86,13 @@ class Product
         $this->price = $price;
         return $this;
     }
+
+    public function toString()
+    {
+        return [
+            'id' => $this->getId(),
+            'title' => $this->getTitle(),
+            'price' => $this->getPrice(),
+        ];
+    }
 }

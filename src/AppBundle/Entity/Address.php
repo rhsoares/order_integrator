@@ -136,4 +136,14 @@ class Address
         $this->country = $country;
         return $this;
     }
+
+    public function toString()
+    {
+        return [
+            'id' => $this->getId(),
+            'address' => $this->getAddress(),
+            'city' => $this->getCity(),
+            'country' => $this->getCountry(),
+        ];
+    }
 }

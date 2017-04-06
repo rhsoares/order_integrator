@@ -156,7 +156,8 @@ class ImportController extends Controller
                         $orderItem = new OrderItem();
                         $orderItem->setOrder($order);
                         $orderItem->setProduct($product);
-                        $orderItem->setQuantity($itemData->quantity);
+                        $orderItem->setQuantity((float)$itemData->quantity);
+                        $orderItem->setSubtotal((float)$itemData->quantity * $itemData->price);
 
                         $manager->persist($orderItem);
                     }

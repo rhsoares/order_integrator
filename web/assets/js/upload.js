@@ -6,9 +6,7 @@
         params: {
             'action': 'save'
         },
-        addedfile: function(file) {
-            alert("Added file.");
-        },
+        allowedFileTypes: 'xml',
         success: function(res, index){
             console.log(res, index);
         }

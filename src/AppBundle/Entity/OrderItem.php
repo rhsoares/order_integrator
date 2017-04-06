@@ -134,4 +134,14 @@ class OrderItem
         $this->subtotal = $subtotal;
         return $this;
     }
+
+    public function toString()
+    {
+        return [
+            'id' => $this->getId(),
+            'product' => $this->getProduct()->toString(),
+            'quantity' => $this->getQuantity(),
+            'subtotal' => $this->getSubtotal()
+        ];
+    }
 }

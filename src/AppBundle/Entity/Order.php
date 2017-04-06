@@ -118,4 +118,23 @@ class Order
         $this->items = $items;
         return $this;
     }
+
+    public function toString()
+    {
+        $return = [
+            'id' => $this->getId(),
+            'person' => $this->getPerson()->toString(),
+        ];
+
+        $arrItems = [];
+        foreach ($this->getItems() as $item) {
+            $arrItems[] = $item->toString();
+        }
+
+        if (count($arrItems) > 0) {
+            $return['items'] = $arrItems;
+        }
+
+        return $return;
+    }
 }

@@ -119,4 +119,34 @@ class Person
         $this->addresses = $addresses;
         return $this;
     }
+
+    public function toString()
+    {
+        $return = [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+        ];
+
+        $phones = [];
+
+        foreach ($this->getPhones() as $phone) {
+            $phones[] = $phone->toString();
+        }
+
+        if (count($phones) > 0) {
+            $return['phones'] = $phones;
+        }
+
+        $addresses = [];
+
+        foreach ($this->getAddresses() as $address) {
+            $addresses[] = $address->toString();
+        }
+
+        if (count($addresses) > 0) {
+            $return['addresses'] = $addresses;
+        }
+
+        return $return;
+    }
 }
